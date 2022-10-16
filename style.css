@@ -270,7 +270,7 @@ ol {
 
 /*Centering our Page - div */
 .container {
-  width: 700px;
+  width: 1200px;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
@@ -310,6 +310,41 @@ button {
   position: absolute;
   /* top: 50px;
   left: 50px; */
-  bottom: 50px; /*We need to set position:relative in the `body` or `containter*/
+  bottom: 50px; /*We need to set position:relative in the `body` or `container*/
   right: 50px;
+}
+
+/*styling the firs letter 'symbol' of header*/
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/*styling first line of a paragraph*/
+p::first-line {
+  color: red;
+}
+
+/*adjacent sibling selector and styling*/
+h3 + p::first-line {
+  /* color: red; */
+}
+
+h2 {
+  position: relative;
+}
+
+/*pseudo element 'after'(last child) and 'before'(first-child)*/
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  /*our element is not in position, since it is an inline-block element we need to add 'position relative' to h2. Then here we need to add 'position absolute' in order to adjust the element to where we want.*/
+  position: absolute;
+  top: -15px;
+  right: -25px;
 }
